@@ -1,213 +1,62 @@
-![github-banner](https://user-images.githubusercontent.com/3611928/169144953-49223b21-1e00-4607-971a-4f870468a986.svg)
+# hugo-starter
 
-This beautiful theme from the [Matter Design Team](https://matterdesign.com.au/) gives you the styling and scaffolding for your next e-commerce site. You can customize to your heart's content and add the tooling for cart, transactions, product, and more. This theme uses:
+This repository contains a template that uses [Netlify](https://www.netlify.com/), [Hugo](https://gohugo.io/), and the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) Hugo theme. Read the the `README.md` file below for step-by-step instructions to get a personal portfolio website up and running.
 
-- [Gatsby](https://www.gatsbyjs.com/)
-- [CSS Modules](https://github.com/css-modules/css-modules)
-- [Prettier](https://prettier.io/)
-- [React Helmet](https://github.com/nfl/react-helmet)
+## Step 1: Deploy this template
 
-Take a look at the screenshot below or preview the live site here: https://gatsby-ecommerce-theme.netlify.app/!
-![full page screenshot](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653371030/CleanShot_2022-05-24_at_01.11.52_2x_bspa8c.jpg)
+To start using this template, deploy it to [Netlify](https://www.netlify.com/) with the button below.
 
-> 🧐 Please be aware that some aspects of this theme are not fully functional and will need to be integrated with the recommended tooling mentioned at the end of the [README](#next-steps-with-this-theme). 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/allegheny-college-junior-innovators/hugo-starter)
 
-## Table of Contents:
+You will need to create an account if you don't have one, and link your GitHub account.
 
-- [Quick Steps + Deploy Options](#quick-setup--deploy-option)
-  - [Cloning + Installing Packages](#cloning--installing-packages)
-- [Deploying](#deploying)
-- [Project Structure](#project-structure)
-  - [Making Changes to the Hero Component](#making-changes-to-the-hero-component)
-  - [Making Changes to the Header or Footer](#making-content-changes-to-the-header-or-footer)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-- [Next Steps with This Theme](#next-steps-with-this-theme)
+This button will cause Netlify to authenticate with GitHub and create a new repository based off of this template, and then set up deployment through Netlify's hosting services.
 
-## Quick Setup + Deploy Option
+## Step 2: Set your URL
 
-Click the button below and it will help you create a new repo, create a new Netlify project, and deploy this Theme!
+Now that you have your website set up on Netlify, click on the "Deploys" tab and view the most recent deploy -- that is the template itself being built! To visit your new website, look under the "Deploys for ..." header for a link ending in `netlify.app`. You can visit that link and see the base template.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
+However, that link is not the most useful or memorable web address -- let's change it to something better! In Netlify, navigate to the "Site settings" tab (it is at the very end of the navigation bar at the top). Then, click the "Change site name" button and enter a better url for your site, like your name.
 
-## Regular Setup
+Once you have done that, you can navigate back to the Deploys tab or look at the top of the Site settings for the new link to your website; save that link as you'll want to enter it as the `baseURL` value in a later step, and share it with your network.
 
- ### Cloning + Installing Packages
- 
-  - Clone this repo with one of these options:
+## Step 3: Customize your website
 
-    - Click the 'Use this template' button at the top of the page
-    - Via the command line:
-       ```shell
-       git clone https://github.com/netlify-templates/gatsby-ecommerce-theme/
-       ```
-    - Or you can clone the theme straight from the Netlify CLI, using the `netlify sites:create-template` command in your terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)) to do the entire flow for you.
+Navigate to the "Deploys" tab in Netlify again, and look for the GitHub link under the "Deploys for ..." header. Click that, and you'll be navigated to the repository that Netlify created for you! Now, edit the files in this repository to set the contents of your website. The following values and files should be configured or removed.
 
-  From there, you can install the project's dependencies by running:
+> If you're in a hurry, hit `.` when you're on the main repository page on GitHub and a web instance of VSCode will open. You can use this editor to edit files, make commits, and view the README, although you cannot run any terminal commands.
 
-  ```shell
-  npm install or yarn install
-  ```
+In `config.toml`:
 
-  Finally, you can run your project locally with:
+- The `baseURL` key, to match what your chosen URL is on Netlify.
+- The `title` key, to configure what your website is titled (and thus what the browser tab is named).
+- Entries in the `[params]` table, to configure the `author`, `description`, `keywords`, and various other theme options.
+- Entries in the `[params.label]` table, to configure the home label in the top-left corner.
+- Entries in the `[params.profileMode]` table, to configure what you'd like to display on the main page.
+- Entries in the `[params.profileMode.buttons]` array of tables, to configure what buttons you'd like on the main page. You can also remove the existing entries to have no buttons.
+- Entries in the `[params.socialIcons]` array of tables, to configure what social icons and links are on the main page.
+- Entries in the `[menu.main]` array of tables, to configure the top navigation links.
 
-  ```shell
-  cd gatsby-sydney-ecommerce-theme/
-  npm start or yarn start
-  ```
-  
-  or, run it using the Netlify CLI with:
-  
-  ```shell
-  netlify run dev
-  ```
-  
-  Open your browser and visit <http://localhost:5000>, your project should now be running!
-  
-  ## Deploying
- 
-  After installing and customizing your new e-commerce theme it's now time to deploy! 
-  
-   -  You can Deploy using the [Netlify CLI](https://cli.netlify.com/):
+In `static/`:
 
-      ```bash
-      netlify init # initialize a new Netlify project & deploy
-      ```
+- `profile.png`, to configure the image to show on the main page (or, if you'd like no image, remove the `image`-related keys in the `[params.profileMode]` table in `config.toml`)
+- Any other static assets like images, fonts, or other static files and folders that you might want to link, reference, or use in your website. These will be available under the root directory of your website -- so, `profile.png` can be directly linked to with `/profile.png`.
 
-   It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `gatsby build` to create a static project and locate the build project in the `public` directory.
+In `contents/`:
 
-   The `init` process will also set up continuous deployment for your project so that a new build will be triggered & deployed when you push code to the repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
+- The contents (and existence) of the `blog/` folder, if you'd like to have blog posts on your website.
+- The contents of the `projects/` folder -- either edit `_index.md` to show your project details all on one page, or create a project file for each ( use `hugo new --kind project projects/<name-of-project>`), which will be displayed as a card on the projects page.
+- Any additional folders and/or files you'd like; each can be linked to by their file path, so `content/test-folder/my-page.md` would be accessed on your website as `/test-folder/my-page`, and you can add links to them in other pages or the top navigation menu.
 
-   You can also use `netlify deploy (--prod)` to manually deploy and `netlify open` to open your project dashboard.
+Experimentation and creativity in organizing and creating content for your website is very important! If you are confused or would like to find out more about the possible configuration options of the PaperMod theme, visit the [demo website](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/), which lists many of the available configuration options not used in this template.
 
-  > 💡 we only have so many keystrokes to give, use `ntl` shorthand for `netlify` or make [an alias of your own](https://www.netlify.com/blog/2020/04/12/speed-up-productivity-with-terminal-aliases/) to save hours...of accumulated milliseconds
+## Alternatives
 
-  - You can deploy within the Netlify site by connecting to git, this [video](https://www.youtube.com/watch?v=4h8B080Mv4U&t=107s) will walk you through that process. 
-  - Or, you can use the Deploy to Netlify button which will walk you through the process of spinning up a repo, creating a new project in Netlify, AND deploying it :)
+If the PaperMod theme isn't quite to your liking, you can easily remove it (use `git rm themes/PaperMod`) and use a different theme! There are many to choose from; [themes.gohugo.io](https://themes.gohugo.io/) contains hundreds of options. Below are a few options and the command you could use to add that theme (after removing PaperMod).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
+- [Gokarna](https://github.com/526avijitgupta/gokarna) - `git submodule add https://github.com/526avijitgupta/gokarna.git themes/gokarna` - [Setup Guide](https://gokarna-hugo.netlify.app/posts/theme-documentation-basics/)
+- [Developer Portfolio](https://github.com/samrobbins85/hugo-developer-portfolio) - `git submodule add https://github.com/samrobbins85/hugo-developer-portfolio themes/hugo-developer-portfolio`
+- [Highlights](https://github.com/schmanat/hugo-highlights-theme) - `git submodule add https://github.com/schmanat/hugo-highlights-theme.git themes/hugo-highlights-theme`
+- [Osprey Delight](https://github.com/kdevo/osprey-delight) - `git submodule add https://github.com/kdevo/osprey-delight.git themes/osprey-delight`
 
-## Project Structure
-
-Here is a bit of an overview of the directory structure of the project:
-
-| Directory | Description |
-| :---- | :---- |
-| `src/components/` | Stores reusable elements across the site. (e.g. BlogPreview element) |
-| `src/pages/` | Stores routes for a user to go to based on each `.js` file and nested folder (e.g. `src/pages/about.js` creates a route `/about` in the web app) |
-| `src/helpers` | Stores mock data for the blog or product list and general utility functions. |
-
-### Making changes to the Hero component
-
-On the homepage of the website and a few other places, there is a full-width image component. We refer to this as the `<Hero/>` component. Here is a bit of an overview of what its API looks like:
-
-```jsx
-<Hero
-  maxWidth='500px' // how big the image's maxumim should be
-  image={'/banner1.png'} // the source location for the image
-  title={'Essentials for a cold winter'} // the main text displayed
-  subtitle={'Discover Autumn Winter 2021'} // text found below the main text
-  ctaText={'shop now'} // the presented text for a user to click on
-  ctaAction={goToShop} // the location the call-to-action text directs users
-/>
-```
-
-You can see it in action under [`src/pages/index.js`](./src/pages/index.js) or see the component in [`src/components/Hero/Hero.js`](./src/components/Hero/Hero.js).
-
-### Making content changes to the Header or Footer
-
-The project contains a file named `src/config.json`. Inside of this file describes the content of the header links (`headerLinks`) as well as the footer links (`footerLinks`). For the header, each element in the array has a base structure of:
-
-```json
-{
-  "menuLabel": "The label that is given to a user",
-  "menuLink": "The URL that this should take a user to"
-}
-```
-
-If you want the menu item to have a dropdown, you can also add a `category` key with the value being an array of the categories and their containing elements, here's what the base could look like:
-
-```json
-{
-  "menuLabel": "The label that is given to a user",
-  "menuLink": "The URL that this should take a user to",
-  "category": [
-    {
-      "categoryLabel": "Label you want the category to have",
-      "submenu": [
-        {
-          "menuLabel": "A label underneath the category",
-          "menuLink": "The associated link to this label"
-        }
-      ]
-    }
-  ]
-}
-```
-
-The footer works in a similar way. It assumes each element in the array has a heading and an array of associated links to direct folks to:
-
-```json
-"footerLinks": [
-    {
-      "subTitle": "Label of the column in the footer",
-      "links": [
-        {
-          "text": "Text to display to the user",
-          "link": "URL of where to take the user to when clicked"
-        },
-      ]
-    }
-]
-```
-
-## Testing
-
-### Included Default Testing
-
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
-
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
-
-If your team is not interested in this tooling, you can remove them with ease!
-
-### Removing Renovate
-
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
-
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-
-```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
--  [plugins.inputs]
--    enable = false
-```
-
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
-
-```bash
-npm uninstall -D netlify-plugin-cypress
-```
-
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
-
-```bash
-npm uninstall cypress
-```
-
-## Next Steps with this theme
-
-This project is intended to be extended by you! We wanted to make possible to replace parts of it with your own tools and data sources. If you're interested on a direction, you can refer to Matter's [how to use section](https://gatsby-ecommerce-theme.netlify.app/how-to-use/) in this project or you may want to consider using [Matter's toolset with their JAMM framework](https://matterdesign.com.au/service/headless-commerce-with-jamm/) which includes some projects like:
-- [BigCommerce](https://bigcommerce.zfrcsk.net/c/2429593/854992/2941) for a headless e-commerce solution
-- [Builder](https://www.builder.io) as a CMS for the blog articles or other content creation
-- [Klaviyo](https://www.klaviyo.com/) for any email or SMS marketing automation
+Keep in mind that every theme is different, and you will need to read through the documentation to discover what entries you can add to `config.toml` and what content structure you should have in `content/`.
