@@ -1,5 +1,5 @@
 ---
-title: My project
+title: 
 date: 2021-11-02T08:10:29-04:00
 draft: false
 showReadingTime: false
@@ -9,11 +9,15 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: false
 ---
 
-## My project
+## My Latest Projects
 
-You can find the current release on [PyPI](https://www.pypi.org)!
+Here is A few projects that I have worked on!
 
-I also wrote a [blog](/my-project-blog) about it!
+[Temperature Conversion](https://github.com/Allegheny-ComputerScience-102-S2022/computer-science-102-spring-2022-pp2-temperature-conversion-tmiller-10)!
 
-- It does a thing
-- I made it with Python and FastAPI
+[Text Processing](https://github.com/Allegheny-ComputerScience-102-S2022/computer-science-102-spring-2022-ee7-text-processing-tmiller-10)!
+
+
+- The first project is able to convert various temperature values using various algorithms.
+- The Second Project is able to take units
+- I made it with Python using VS Code

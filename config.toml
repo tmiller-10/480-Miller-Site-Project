@@ -18,24 +18,20 @@ disableScrollToTop = false
 
 [params.label]
 text = "Home"
-icon = "/profile.png"
+icon = "/Tyler Miller Website Cutout.png"
 iconHeight = 24
 
 [params.profileMode]
 enabled = true
 title = "Tyler Miller"
-subtitle = "I am a CS student"
+subtitle = "Welcome to my Website! I have created this website to showcase projects and other contributions that I have made within the Computer Science Industry. I hope you enjoy them!"
 imageUrl = "Tyler Miller Website Cutout.png"
-imageWidth = 120
-imageHeight = 120
+imageWidth = 300
+imageHeight = 270
 
 [[params.profileMode.buttons]]
 name = "tags"
 url = "/tags/"
-
-[[params.profileMode.buttons]]
-name = "puppies"
-url = "https://google.com/search?tbm=isch&q=puppies"
 
 [[params.socialIcons]]
 name = "twitter"
@@ -46,20 +42,12 @@ name = "instagram"
 url = "https://instagram.com/"
 
 [[params.socialIcons]]
-name = "stackoverflow"
-url = "https://stackoverflow.com"
-
-[[params.socialIcons]]
 name = "github"
 url = "https://github.com/"
 
-[[params.socialIcons]]
-name = "gitlab"
-url = "https://gitlab.com/"
-
 [[menu.main]]
-identifier = "blog"
-name = "blog"
+identifier = "About Me"
+name = "About Me"
 url = "/blog/"
 weight = 10
 
@@ -68,9 +56,3 @@ identifier = "projects"
 name = "projects"
 url = "/projects/"
 weight = 20
-
-[[menu.main]]
-identifier = "link"
-name = "A link"
-url = "https://google.com/search?tbm=isch&q=cute%20puppies"
-weight = 30
