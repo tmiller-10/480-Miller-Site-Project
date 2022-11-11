@@ -8,11 +8,12 @@ draft: false
 description: "Some summary description"
 cover:
   hidden: false
-  image: "profile.png"
+  image: "Tyler Miller FIJI Headshot.jpeg"
   caption: "Me working on the project"
 ---
 
-This is a blog post. You don't need to have one, but it's nice!
+My name is Tyler Miller and I am a current Computer Science student at Allegheny College.
+
 
 ## More information
 
