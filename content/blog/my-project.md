@@ -13,8 +13,8 @@ cover:
 ---
 
 My name is Tyler Miller and I am studying Computer Science at Allegheny College.
-I am the Current Pi Chapter President of Phi Gamma Delta (FIJI) and a member of the Allegeheny College Club Hockey Team.
-My intended profession is Web Development or maybe something with Artificial Intelligence or Software Development.
+I am the current member of Phi Gamma Delta (FIJI) and a member of the Allegeheny College Club Hockey Team.
+My intended profession is Web Development or maybe something with Artificial Intelligence or Software Development
 
 
 ## More information
@@ -29,4 +29,3 @@ Here our some of my skills related to productivity
 - Organization
 - Time Management
 - Accountability
-

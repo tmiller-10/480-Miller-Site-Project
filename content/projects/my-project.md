@@ -13,10 +13,9 @@ ShowPostNavLinks: false
 
 Here is A few projects that I have worked on!
 
-[Temperature Conversion](https://github.com/Allegheny-ComputerScience-102-S2022/computer-science-102-spring-2022-pp2-temperature-conversion-tmiller-10)!
+[Temperature Conversion](https://github.com/tmiller-10/Temperature-Conversion1)
 
-[Text Processing](https://github.com/Allegheny-ComputerScience-102-S2022/computer-science-102-spring-2022-ee7-text-processing-tmiller-10)!
-
+[Text Processing](https://github.com/tmiller-10/Text-processing1)
 
 - The first project is able to convert various temperature values using various algorithms.
 - The Second Project is able to take units

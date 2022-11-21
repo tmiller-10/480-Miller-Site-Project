@@ -26,8 +26,8 @@ enabled = true
 title = "Tyler Miller"
 subtitle = "Welcome to my Website! I have created this website to showcase projects and other contributions that I have made within the Computer Science Industry. I hope you enjoy them!"
 imageUrl = "Tyler Miller Website Cutout.png"
-imageWidth = 300
-imageHeight = 270
+imageWidth = 215
+imageHeight = 275
 
 [[params.profileMode.buttons]]
 name = "tags"
